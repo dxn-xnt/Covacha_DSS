@@ -218,7 +218,7 @@ class DoctorLabResult(QMainWindow):
             self.ui.LabTestTabe_2.setRowCount(0)
 
             # Fetch prescriptions for the given check-up ID
-            prescriptions = Prescription.display_prescription(self.checkup_id)
+            prescriptions = Prescription.get_prescription(self.checkup_id)
             if not prescriptions:
                 print(f"No prescriptions found for chck_id: {self.checkup_id}")
                 # Add a single row with "No Prescriptions"

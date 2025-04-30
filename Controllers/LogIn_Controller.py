@@ -1,5 +1,6 @@
-from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
+from PyQt5.QtWidgets import QMessageBox
 from Models.DB_Connection import DBConnection
+
 from Controllers.AdminDashboard_Controller import AdminDashboardController
 from Controllers.StaffDashboard_Controller import StaffDashboardController
 from Controllers.DoctorDashboard_Controller import DoctorDashboardController
