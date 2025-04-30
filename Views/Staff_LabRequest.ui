@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>959</width>
-    <height>693</height>
+    <width>1173</width>
+    <height>821</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,7 @@ QPushButton {
 	font: 900 16pt &quot;Satoshi Black&quot;;
 	background-color: transparent;
  	border-radius: 10px;
+	font-weight: bold;
 	color: #F4F7ED;
 	text-align: left;
 	padding: 5px 5px;
@@ -38,6 +39,10 @@ QLabel {
 	qproperty-alignment: 'AlignLeft';
     qproperty-wordWrap: true;
 	background: transparent;
+}
+
+#MainBodyContainer {
+	background-color: #f0f0f0;
 }
 </string>
   </property>
@@ -58,32 +63,17 @@ QLabel {
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
+    <item alignment="Qt::AlignLeft">
      <widget class="QWidget" name="NavBar" native="true">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <property name="spacing">
-        <number>6</number>
-       </property>
-       <property name="leftMargin">
-        <number>10</number>
-       </property>
-       <property name="topMargin">
-        <number>10</number>
-       </property>
-       <property name="rightMargin">
-        <number>10</number>
-       </property>
-       <property name="bottomMargin">
-        <number>10</number>
-       </property>
+      <layout class="QVBoxLayout" name="verticalLayout_12">
        <item>
-        <widget class="QPushButton" name="DashBoardButton_2">
+        <widget class="QPushButton" name="NavBarButton">
          <property name="text">
           <string/>
          </property>
@@ -116,15 +106,15 @@ QLabel {
         </spacer>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="MainButtons_2">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="spacing">
           <number>20</number>
          </property>
-         <property name="sizeConstraint">
-          <enum>QLayout::SetNoConstraint</enum>
-         </property>
          <item>
           <widget class="QPushButton" name="DashboardButton">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="text">
             <string> Dashboard</string>
            </property>
@@ -158,14 +148,7 @@ QLabel {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="TransactionsButton">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	font: 900 20pt &quot;Satoshi Black&quot;;	
-	border: 2px solid white;
-}
-</string>
-           </property>
+          <widget class="QPushButton" name="TransactionButton">
            <property name="text">
             <string> Transactions</string>
            </property>
@@ -183,6 +166,11 @@ QLabel {
          </item>
          <item>
           <widget class="QPushButton" name="LabRequestButton">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	font: 900 20pt &quot;Satoshi Black&quot;;
+}</string>
+           </property>
            <property name="text">
             <string> Lab Request</string>
            </property>
@@ -211,7 +199,7 @@ QLabel {
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>40</height>
+           <height>362</height>
           </size>
          </property>
         </spacer>
@@ -222,9 +210,9 @@ QLabel {
           <enum>QLayout::SetNoConstraint</enum>
          </property>
          <item>
-          <widget class="QPushButton" name="ProfileButton">
+          <widget class="QPushButton" name="pushButton_9">
            <property name="text">
-            <string> Settings</string>
+            <string>Profile</string>
            </property>
            <property name="icon">
             <iconset resource="../Images/resources.qrc">
@@ -232,8 +220,8 @@ QLabel {
            </property>
            <property name="iconSize">
             <size>
-             <width>40</width>
-             <height>40</height>
+             <width>30</width>
+             <height>30</height>
             </size>
            </property>
           </widget>
@@ -241,7 +229,7 @@ QLabel {
          <item>
           <widget class="QPushButton" name="pushButton_10">
            <property name="text">
-            <string> Logout</string>
+            <string>Logout</string>
            </property>
            <property name="icon">
             <iconset resource="../Images/resources.qrc">
@@ -249,8 +237,8 @@ QLabel {
            </property>
            <property name="iconSize">
             <size>
-             <width>40</width>
-             <height>40</height>
+             <width>30</width>
+             <height>30</height>
             </size>
            </property>
           </widget>
@@ -261,25 +249,33 @@ QLabel {
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="MainBodyContainer">
+     <widget class="QWidget" name="MainBodyContainer" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">#MainBodyContainer {
 	background-color: #f0f0f0;
 }
 
 #Header {
-	padding: 10px 20px;
-	padding-top: 20px;
+	padding: 20px 20px;
+	padding-bottom: 10px;
 }
 QLabel {
     padding: 0px;
 }
 #UserType {
-	font: 500 12pt &quot;Satoshi&quot;;
+	font: 300 10pt &quot;Lexend Light&quot;;
+	font-size: 15px;
 	color: #2B3752;
 }
 #UserName {
-	font: 900 16pt &quot;Satoshi&quot;;
+	font: 600 10pt &quot;Lexend SemiBold&quot;;
+	font-size: 20px;
 	color: #2B3752;
 }
 #InterfaceTitle{
@@ -291,18 +287,33 @@ QGraphicsView {
     background: white;
 }
 
+QComboBox {
+    background-color: #2E6E65;
+    font-size: 15px;
+    color: #1b3b3a;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #2E6E65;
+}
+
+QComboBox::drop-down {
+    background: transparent;
+    border: none;
+    width: 20px;
+}
+
+QPushButton {
+	background-color: #2e6e65;
+	font-size: 20px;
+}
+
+
 
 </string>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
-        <number>0</number>
+        <number>10</number>
        </property>
        <property name="leftMargin">
         <number>0</number>
@@ -318,12 +329,6 @@ QGraphicsView {
        </property>
        <item>
         <widget class="QFrame" name="Header">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -345,8 +350,14 @@ QGraphicsView {
           </property>
           <item>
            <widget class="QLabel" name="InterfaceTitle">
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
             <property name="text">
-             <string>Transactions List</string>
+             <string>Lab Request</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading</set>
             </property>
            </widget>
           </item>
@@ -360,6 +371,23 @@ QGraphicsView {
               <property name="spacing">
                <number>0</number>
               </property>
+              <item alignment="Qt::AlignRight">
+               <widget class="QLabel" name="UserName">
+                <property name="text">
+                 <string>Roy Adrian Rondina</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading</set>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignRight">
+               <widget class="QLabel" name="ID">
+                <property name="text">
+                 <string>Staff</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </item>
             <item>
@@ -388,7 +416,7 @@ QGraphicsView {
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_6">
+              <layout class="QVBoxLayout" name="verticalLayout_5">
                <property name="spacing">
                 <number>0</number>
                </property>
@@ -404,6 +432,25 @@ QGraphicsView {
                <property name="bottomMargin">
                 <number>0</number>
                </property>
+               <item>
+                <widget class="QGraphicsView" name="ProfilePic">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>
@@ -413,71 +460,130 @@ QGraphicsView {
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="MainBody">
+        <widget class="QWidget" name="Body" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string notr="true">#Searchbar {
-	border: 2px solid #2E6E65;
-	border-radius: 15px;
-	text-align: center;
-	background-color: transparent;
+          <string notr="true">
+QTableWidget {
+    background-color: #F4F7ED;
+    gridline-color: #D9E4DC;
+    border: 2px solid #2E6E65;
+    border-radius: 9px;
 }
 
+QTableWidget::item {
+    border: 1px solid #2E6E65;
+}
 
+QTableWidget::item:alternate {
+    background-color: #E0E0E0;
+}
+
+QTableWidget QHeaderView::section {
+    background-color: #2E6E65;
+    color: white;
+    padding: 5px;
+    font: bold 14px &quot;Segoe UI&quot;;
+	border: 2px solid #2E6E65;
+}
+
+QTableWidget::item:selected {
+    background-color: #CCE3D0;
+    color: #2E6E65;
+}
 </string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <property name="spacing">
-           <number>0</number>
+           <number>5</number>
           </property>
           <property name="leftMargin">
-           <number>20</number>
+           <number>0</number>
           </property>
           <property name="topMargin">
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>20</number>
+           <number>0</number>
           </property>
           <property name="bottomMargin">
-           <number>20</number>
+           <number>0</number>
           </property>
-          <item>
-           <widget class="QFrame" name="SearchBarContainer">
+          <item alignment="Qt::AlignTop">
+           <widget class="QWidget" name="widget_3" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>70</height>
-             </size>
+            <property name="styleSheet">
+             <string notr="true">#SearchBar {
+	background-color: #F4F7ED;
+	border: 2px solid #2E6E65;
+    border-radius: 15px;
+}
+#Search{
+	background-color: transparent ;
+	font: 300 14pt &quot;Lexend Light&quot;;
+}
+#AddUserButton {
+	text-align: center;
+}
+#Icon {
+	background-color: transparent;
+}
+QComboBox {
+    background-color: #F4F7ED;
+    border: 2px solid #2E6E65;
+    border-radius: 10px;
+    padding: 5px 10px;
+	font: 300 12pt &quot;Lexend Light&quot;;
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+    border-left: 1px solid #2E6E65;
+    background-color: #D9E4DC;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+QComboBox::down-arrow {
+    image: url(:/lucide/icons/chevron-down.svg);
+    width: 20px;
+    height: 20px;
+}
+QComboBox QAbstractItemView {
+    background-color: #F4F7ED;
+    selection-background-color: #CCE3D0;
+    border: 1px solid #2E6E65;
+    border-radius: 2px;
+    outline: 0;
+	font: 300 12pt &quot;Lexend Light&quot;;
+}
+
+</string>
             </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <property name="spacing">
+              <number>10</number>
+             </property>
              <property name="leftMargin">
-              <number>0</number>
+              <number>20</number>
              </property>
              <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
               <number>0</number>
              </property>
              <item>
@@ -488,18 +594,19 @@ QGraphicsView {
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="styleSheet">
-                <string notr="true">#SearchBar {
-	background-color: #F4F7ED;
-	border: 2px solid #2E6E65;
-    border-radius: 15px;
-}
-#Search{
-	background-color: transparent ;
-	font: 300 14pt &quot;Lexend Light&quot;;
-}</string>
+               <property name="minimumSize">
+                <size>
+                 <width>290</width>
+                 <height>0</height>
+                </size>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
                 <property name="spacing">
                  <number>0</number>
                 </property>
@@ -516,10 +623,7 @@ QGraphicsView {
                  <number>5</number>
                 </property>
                 <item>
-                 <widget class="QLineEdit" name="Search"/>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="SearchButton">
+                 <widget class="QPushButton" name="Icon">
                   <property name="text">
                    <string/>
                   </property>
@@ -535,125 +639,64 @@ QGraphicsView {
                   </property>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QLineEdit" name="Search">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Maximum</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>10</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QComboBox" name="DiagnoseBox">
+              <widget class="QComboBox" name="Specialty">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="styleSheet">
-                <string notr="true">QComboBox {
-    background-color: #D9E4DC;
-    border: 2px solid #2E6E65;
-    border-radius: 10px;
-    padding: 5px 10px;
-	font: 300 12pt &quot;Lexend Light&quot;;
-}
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 30px;
-    border-left: 1px solid #2E6E65;
-    background-color: #D9E4DC;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-QComboBox::down-arrow {
-    image: url(:/icons/icons/chevron-down.svg);
-    width: 20px;
-    height: 20px;
-}
-QComboBox QAbstractItemView {
-    background-color: #F4F7ED;
-    selection-background-color: #CCE3D0;
-    border: 1px solid #2E6E65;
-    border-radius: 2px;
-    outline: 0;
-	font: 300 12pt &quot;Lexend Light&quot;;
-}</string>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
                </property>
-               <property name="editable">
-                <bool>false</bool>
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
+                </size>
                </property>
                <item>
                 <property name="text">
-                 <string>Sort By:</string>
+                 <string>Gynecologist</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pediatrician</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Opthalmologist</string>
                 </property>
                </item>
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="DateBox">
-               <property name="styleSheet">
-                <string notr="true">QComboBox {
-    background-color: #D9E4DC;
-    border: 2px solid #2E6E65;
-    border-radius: 10px;
-    padding: 5px 10px;
-	font: 300 12pt &quot;Lexend Light&quot;;
-}
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 30px;
-    border-left: 1px solid #2E6E65;
-    background-color: #D9E4DC;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-QComboBox::down-arrow {
-    image: url(:/icons/icons/chevron-down.svg);
-    width: 20px;
-    height: 20px;
-}
-QComboBox QAbstractItemView {
-    background-color: #F4F7ED;
-    selection-background-color: #CCE3D0;
-    border: 1px solid #2E6E65;
-    border-radius: 2px;
-    outline: 0;
-	font: 300 12pt &quot;Lexend Light&quot;;
-}</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Sort Order: </string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_4">
+              <spacer name="horizontalSpacer">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Expanding</enum>
-               </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>200</width>
+                 <width>350</width>
                  <height>20</height>
                 </size>
                </property>
@@ -669,27 +712,27 @@ QComboBox QAbstractItemView {
 	font: 900 10pt &quot;Satoshi Black&quot;;
 	background-color:  #2E6E65;
 	border-radius: 10px;
-	font-weight: bold;	
+	font-weight: bold;
 	font-size: 20px;
 	color: #F4F7ED;
 	text-align: center;
 }</string>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
              <property name="spacing">
               <number>10</number>
              </property>
              <property name="leftMargin">
-              <number>0</number>
+              <number>20</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>10</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>20</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>20</number>
              </property>
              <item>
               <widget class="QScrollArea" name="scrollArea">
@@ -720,11 +763,11 @@ QScrollBar::sub-line:vertical{
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>498</width>
-                  <height>521</height>
+                  <width>754</width>
+                  <height>644</height>
                  </rect>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_2">
+                <layout class="QVBoxLayout" name="verticalLayout_6">
                  <property name="spacing">
                   <number>0</number>
                  </property>
@@ -741,18 +784,16 @@ QScrollBar::sub-line:vertical{
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QTableWidget" name="TransactionTable">
+                  <widget class="QTableWidget" name="LabRequestTable">
                    <property name="styleSheet">
                     <string notr="true">QTableWidget {
 	background-color: #F4F7ED;
 	gridline-color: transparent;
 	border-radius: 10px;
-	border: 2px solid #2E6E65;
 }
 QTableWidget::item {
 	border: none;
-	font:500 16pt &quot;Satoshi&quot;;
-	color: #2B3752;
+	font: 16pt &quot;Lexend&quot;;
 }
 QTableWidget::item:selected {
 	background-color: rgba(46, 110, 101, 0.3);
@@ -760,21 +801,29 @@ QTableWidget::item:selected {
 QTableWidget QHeaderView::section {
 	background-color: #2E6E65;
 	color: white;
-	font: 700 15pt &quot;Satoshi&quot;;
+	padding: 5px;
+	font: 18px &quot;Lexend Medium&quot;;
 	border: 2px solid #2E6E65;
-}</string>
+}
+</string>
                    </property>
+                   <property name="columnCount">
+                    <number>4</number>
+                   </property>
+                   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                    <bool>false</bool>
+                   </attribute>
                    <attribute name="horizontalHeaderStretchLastSection">
                     <bool>true</bool>
                    </attribute>
                    <column>
                     <property name="text">
-                     <string>Check Up ID</string>
+                     <string>Check-Up ID</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Name</string>
+                     <string>Patient</string>
                     </property>
                    </column>
                    <column>
@@ -796,7 +845,7 @@ QTableWidget QHeaderView::section {
              <item alignment="Qt::AlignTop">
               <widget class="QWidget" name="widget_2" native="true">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -807,13 +856,7 @@ QTableWidget QHeaderView::section {
                  <height>0</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>110</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout">
+               <layout class="QVBoxLayout" name="verticalLayout_2">
                 <property name="spacing">
                  <number>5</number>
                 </property>
@@ -830,9 +873,16 @@ QTableWidget QHeaderView::section {
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="ViewButton">
+                 <widget class="QPushButton" name="Modify">
                   <property name="text">
-                   <string>View</string>
+                   <string>Modify</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="Delete">
+                  <property name="text">
+                   <string>Delete</string>
                   </property>
                  </widget>
                 </item>

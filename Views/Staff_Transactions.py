@@ -436,4 +436,3 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Date Diagnosed"))
         item = self.DoneTable.horizontalHeaderItem(4)
         item.setText(_translate("MainWindow", "Action"))
-import resources_rc

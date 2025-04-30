@@ -273,4 +273,3 @@ class Ui_MainWindow(object):
         self.pushButton_3.setText(_translate("MainWindow", "Delete"))
         self.Cancel.setText(_translate("MainWindow", "Cancel"))
         self.AddCheckUp.setText(_translate("MainWindow", "Update"))
-import resources_rc
